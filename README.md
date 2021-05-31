@@ -31,11 +31,14 @@ Vamos executar o comando `mvn clean install spring-boot:run` dentro do diretorio
 
 O Spring Boot irá selecionar automaticamente o data.sql e executá-lo em nosso banco de dados H2 configurado durante a inicialização do aplicativo. Essa é uma boa maneira de propagar o banco de dados para testes ou outros propósitos.
 
+![image01](https://github.com/willyms/bootcamp-dio-santander/blob/master/swagger-backend.png)
+
 No entanto, podemos alterar esses parâmetros para qualquer bando de dados da sua preferencia dentro do arquivo application.yml.
 
 
 Dentro do diretorio `frontend` execute o comando `ng serve --watch` e a aplicação estara rodando no endereço `http://localhost:4200/`.
 
+![image02](https://github.com/willyms/bootcamp-dio-santander/blob/master/tela-principal.png)
 
 ## Links
 - Guia completo do Flexbox - [https://css-tricks.com/snippets/css/a-guide-to-flexbox/](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
