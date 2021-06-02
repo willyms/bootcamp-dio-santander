@@ -13,6 +13,7 @@ Nesse projeto foi feito 3 contêineres Docker separados que contém:
 - Node.js
 - Angular CLI
 
+
 Para executar este aplicativo, você precisa instalar duas ferramentas: Docker e Docker Compose.
 
 Instruções de como instalar o Docker no [Ubuntu](https://docs.docker.com/engine/install/ubuntu/), [Windows](https://docs.docker.com/docker-for-windows/install/), [Mac](https://docs.docker.com/docker-for-mac/install/).
