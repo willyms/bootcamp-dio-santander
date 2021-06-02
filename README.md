@@ -1,21 +1,10 @@
-# Santander DEV WEEK
-Projeto simple de recriar a tela de cotações do aplicativo do Santander em um website responsivo utilizando JAVA (Spring-Boot) e ANGULAR.
+# Bootcamp Santander: Java + Angular
+Projeto simple de recriar a tela de cotações do aplicativo do Santander em um website responsivo utilizando Angular e Spring-Boot.
 
-Objetivo será aprimorar os conceitos e tecnicas, sendo elas: 
- - Camada Controller
- - Rest/API/JSON
- - Documentações API's com OPENAPI
- - Camada DAO
- - Hibernete / JPA
- - Banco de dados
- - Camada Service
- - Mapper de conversão
- - Exceptions Handlers
- - GitHub / Versiona codigo fonte
- FrontEnd
- - Componets
- - Modules
- - Routes
+Nesse projeto foi feito 3 contêineres Docker separados que contém:
+- PostgreSQL database
+- Java backend (Spring Boot)
+- Angular frontend
 
 ## Pré requisito
 - Maven
@@ -24,19 +13,42 @@ Objetivo será aprimorar os conceitos e tecnicas, sendo elas:
 - Node.js
 - Angular CLI
 
+
+Para executar este aplicativo, você precisa instalar duas ferramentas: Docker e Docker Compose.
+
+Instruções de como instalar o Docker no [Ubuntu](https://docs.docker.com/engine/install/ubuntu/), [Windows](https://docs.docker.com/docker-for-windows/install/), [Mac](https://docs.docker.com/docker-for-mac/install/).
+
+Docker Compose já está incluído nos pacotes de instalação para Windows e Mac, portanto, apenas usuários do Ubuntu precisam seguir estas [instruções](https://docs.docker.com/compose/install/).
+
+
 ## Executando
-Com tudo pronto, 
+Pode ser executado com um único comando em um terminal:
+~~~
+$ docker-compose up -d
+~~~
+Se você quiser pará-lo, execute o seguinte comando:
+~~~
+$ docker-compose down
+~~~
+### **backend-app (REST API)**
 
-Vamos executar o comando `mvn clean install spring-boot:run` dentro do diretorio `backend` e a aplicação estará rodando na endereço http://localhost:8080/swagger-ui/index.html, por padrão a aplicação esta unsando H2 (bando de dados armazenamento na memória).
+Este é um aplicativo baseado em Spring Boot (Java) que se conecta a um banco de dados que expõe os endpoints REST que podem ser consumidos pelo front-end. Ele suporta vários métodos HTTP REST como GET, POST, PUT e DELETE
 
-O Spring Boot irá selecionar automaticamente o data.sql e executá-lo em nosso banco de dados H2 configurado durante a inicialização do aplicativo. Essa é uma boa maneira de propagar o banco de dados para testes ou outros propósitos.
+A lista completa de endpoints REST disponíveis pode ser encontrada na IU Swagger, que pode ser chamada usando o link: http://localhost:8080/api/swagger-ui.html
+
+Este aplicativo também é colocado no contêiner do Docker e sua definição pode ser encontrada em um arquivo `backend/Dockerfile`.
 
 ![image01](https://github.com/willyms/bootcamp-dio-santander/blob/master/swagger-backend.png)
 
-No entanto, podemos alterar esses parâmetros para qualquer bando de dados da sua preferencia dentro do arquivo application.yml.
 
+### **frontend-app (Frontend)**
 
-Dentro do diretorio `frontend` execute o comando `ng serve --watch` e a aplicação estara rodando no endereço `http://localhost:4200/`.
+Este é um endpoint real para um usuário onde ele pode visualizar as cotacoes diarias. Ele consome os endpoints da API REST fornecidos pelo backend-app.
+
+A aplicação estará rodando no link: http://localhost:4200/.
+
+Este aplicativo também é colocado no contêiner do Docker e sua definição pode ser encontrada em um arquivo `frontend/Dockerfile`.
+
 
 ![image02](https://github.com/willyms/bootcamp-dio-santander/blob/master/tela-principal.png)
 
